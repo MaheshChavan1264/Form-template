@@ -1,0 +1,68 @@
+<header>DOM Events</header>
+<div class="container">
+  <div class="event">
+    <h3>Click Event</h3>
+    <button (click)="click()" class="field">Click Me</button>{{ clickCounter }}
+  </div>
+
+  <div class="event">
+    <h3>Double Click Event</h3>
+    <button (dblclick)="dblclick()" class="field">Click Me</button
+    >{{ dblClickCounter }}
+  </div>
+
+  <div class="event">
+    <h3>Blur Event</h3>
+    <input (blur)="blur()" type="text" name="" class="field" />
+  </div>
+  <div class="event">
+    <h3>Focus Event</h3>
+    <input (focus)="focus()" type="text" name="" class="field" />
+  </div>
+  <div class="event">
+    <h3>Scroll Event</h3>
+    <textarea (scroll)="scroll()" name="scroll" id="" cols="50" rows="3">
+ProGrad Program is a coding bootcamp conducted by FacePrep
+which helps you master the most in
+demand tech industry skills with
+placement assistant to get into top MNC's</textarea
+    >
+  </div>
+  <div class="event">
+    <h3>Pipes-UpperCase and Lowercase</h3>
+    <input type="text" #names (ngModel)="(name)" />
+    <button class="field" (click)="pipes(names.value)">Submit</button>
+    <p class="field">
+      {{ name | uppercase }}
+      <br />
+      {{ name | lowercase }}
+    </p>
+  </div>
+
+  <div class="event">
+    <h3>Pipes-Currency</h3>
+    <input type="text" #currency (ngModel)="(number)" />
+    <button class="field" (click)="numbers(currency.value)">Submit</button>
+    <p class="field">
+      {{ number | currency: "INR" }}
+      <br />
+      {{ number | currency: "USD" }}
+      <br />
+      {{ number | currency: "EUR" }}
+    </p>
+  </div>
+
+  <div class="event">
+    <h3>Pipes-Dates</h3>
+    <button class="field" (click)="date()">Submit</button>
+    <p class="field">
+      {{ currentDate | date: "fullDate" }}
+      <br />
+      {{ currentDate | date: "medium" }}
+      <br />
+      {{ currentDate | date: "short" }}
+      <br />
+      {{ currentDate | date: "MM" }}
+    </p>
+  </div>
+</div>
